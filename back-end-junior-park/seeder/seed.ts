@@ -1,8 +1,8 @@
 import { faker } from '@faker-js/faker'
 import { PrismaClient, Product } from '@prisma/client'
-import * as dotenv from 'dotenv'
+import * as detenv from 'dotenv'
 
-dotenv.config()
+detenv.config()
 const prisma = new PrismaClient()
 
 const createProducts = async (quantity: number) => {
@@ -12,19 +12,21 @@ const createProducts = async (quantity: number) => {
 		const productName = faker.commerce.productName()
 		const categoryName = faker.commerce.department()
 
+		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+		// @ts-ignore
 		const product = await prisma.product.create({
 			data: {
 				name: productName,
 				slug: faker.helpers.slugify(productName),
 				description: faker.commerce.productDescription(),
-				price: +faker.commerce.price(1, 50000),
+				price: +faker.commerce.price(10, 999, 0),
 				images: Array.from({
-                    length: faker.datatype.number({ min: 2, max: 7 }),
-                  }).map(() => faker.image.imageUrl()),
+					length: faker.datatype.number({ min: 2, max: 6 })
+				}).map(() => faker.image.imageUrl()),
 				category: {
 					create: {
 						name: categoryName,
-                        slug: faker.helpers.slugify(categoryName)
+						slug: faker.helpers.slugify(categoryName)
 					}
 				},
 				reviews: {
@@ -34,7 +36,7 @@ const createProducts = async (quantity: number) => {
 							text: faker.lorem.paragraph(),
 							user: {
 								connect: {
-									id: 1
+									id: 2
 								}
 							}
 						},
@@ -58,12 +60,14 @@ const createProducts = async (quantity: number) => {
 }
 
 async function main() {
-	console.log('start seeding.....')
-	await createProducts(10)
+	console.log(`Старт наполнение БД фиктивными данными...`)
+	await  createProducts(10)
 }
 
 main()
-	.catch(e => console.error(e))
+	.catch(e => {
+		console.error(e)
+	})
 	.finally(async () => {
 		await prisma.$disconnect()
 	})

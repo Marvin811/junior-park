@@ -34,7 +34,7 @@ model Product {
 
   name        String   @unique
   slug        String   @unique
-  description String
+  description String   @unique
   price       Int
   images      String[]
 
