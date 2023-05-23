@@ -1,6 +1,6 @@
 import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common'
 import { PrismaService } from 'src/prisma.service'
-import { UserObject } from './user.object'
+import { userObject } from './user.object'
 import { Prisma } from '@prisma/client'
 import { hash } from 'argon2'
 import { UserDto } from './user.dto'
@@ -15,7 +15,7 @@ export class UserService {
 				id
 			},
 			select: {
-				...UserObject,
+				...userObject,
 				favorites: {
 					select: {
 						id: true,
@@ -75,6 +75,6 @@ export class UserService {
             }
         })
 
-        return 'Success'
+        return {message: 'Success'}
     }
 }
