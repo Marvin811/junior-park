@@ -16,7 +16,7 @@ export class CategoryService {
 			select: categoryObject
 		})
 		if (!category) {
-			throw new Error('Category not found')
+			throw new NotFoundException('Category not found')
 		}
 
 		return category
