@@ -1,8 +1,8 @@
 {
   "name": "back-end-junior-park",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "Board games store project for children and adults",
+  "author": "Egor Lukin [Marvin811]",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
