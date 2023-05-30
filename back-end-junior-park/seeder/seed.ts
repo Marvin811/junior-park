@@ -22,7 +22,7 @@ const createProducts = async (quantity: number) => {
                 images: Array.from({
                     length: faker.datatype.number({ min: 3, max: 5 })
                 }).map(() =>
-                    faker.image.imageUrl(500, 500)),
+                    faker.image.technics(500, 500)),
 				category: {
 					create: {
 						name: categoryName,
