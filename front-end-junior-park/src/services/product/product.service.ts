@@ -1,4 +1,4 @@
-import { IProduct } from '@/types/product.types'
+import { IProduct } from '@/app/types/product.types'
 
 import { PRODUCT, TypeProductData, TypeProductDataFilters } from './product.types'
 import { instance } from '@/app/api/api.interceptor'

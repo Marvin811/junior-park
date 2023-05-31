@@ -1,4 +1,4 @@
-import { IPaymentResponse } from '@/types/payment.type'
+import { IPaymentResponse } from "@/types/payment.type"
 
 import { instance } from '../api/api.interceptor'
 

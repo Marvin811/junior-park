@@ -1,4 +1,4 @@
-import { IReview } from '@/types/review.types'
+import { IReview } from "@/types/review.types"
 
 import { instance } from '../api/api.interceptor'
 /* Вынести отдельно */ 
