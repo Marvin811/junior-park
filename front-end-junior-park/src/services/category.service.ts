@@ -1,5 +1,5 @@
 import { ICategory } from "@/types/category.types"
-import { instance } from "../api/api.interceptor"
+import { instance } from "@/api/api.interceptor"
 
 const CATEGORY = "categories"
 

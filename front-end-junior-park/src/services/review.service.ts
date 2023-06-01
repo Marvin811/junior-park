@@ -1,6 +1,6 @@
 import { IReview } from "@/types/review.types"
 
-import { instance } from '../api/api.interceptor'
+import { instance } from '@/api/api.interceptor'
 /* Вынести отдельно */ 
 const REVIEWS = 'reviews'
 type TypeData = {

@@ -1,5 +1,5 @@
 import { IUser } from "@/types/user.types"
-import { instance } from "../api/api.interceptor"
+import { instance } from "@/api/api.interceptor"
 
 const USERS = "users"
 type TypeData = {

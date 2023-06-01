@@ -1,6 +1,6 @@
 import { IPaymentResponse } from "@/types/payment.type"
 
-import { instance } from '../api/api.interceptor'
+import { instance } from '@/api/api.interceptor'
 
 const PAYMENT = 'payment'
 

@@ -1,5 +1,5 @@
 import { IOrder } from "@/types/order.types"
-import { instance } from "../api/api.interceptor"
+import { instance } from "@/api/api.interceptor"
 
 const ORDERS = "orders"
 
