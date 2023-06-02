@@ -1,5 +1,5 @@
 import { store, persistor } from '@/store/store'
-import '@/styles/globals.css'
+import '@/assets/styles/globals.css'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import type { AppProps } from 'next/app'
 import { Provider } from 'react-redux'

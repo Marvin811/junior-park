@@ -2,9 +2,9 @@ import axios from 'axios'
 import Cookies from 'js-cookie'
 
 import { saveToStorage } from './auth.helper'
-import { getContentType } from '@/app/api/api.helper'
-import { IAuthResponse, IEmailPassword } from '@/app/store/user/user.interface'
-import { instance } from '@/app/api/api.interceptor'
+import { getContentType } from '@/api/api.helper'
+import { IAuthResponse, IEmailPassword } from '@/store/user/user.interface'
+import { instance } from '@/api/api.interceptor'
 
 export const AuthService = {
     async main(type: 'login' | 'register', data: IEmailPassword) {

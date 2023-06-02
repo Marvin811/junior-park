@@ -14,8 +14,9 @@ import {
 	persistStore
 } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
+import { userSlice } from './user/user.slice'
 
-import { cartSlice } from '../cart/cart.slice'
+//import { cartSlice } from '@/cart/cart.slice'
 
 const persistConfig = {
 	ket: 'junior-park',
@@ -25,7 +26,8 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
 	cart: cartSlice.reducer,
-	carousel: carouselSlice.reducer
+	carousel: carouselSlice.reducer,
+	user: userSlice.reducer
 })
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
