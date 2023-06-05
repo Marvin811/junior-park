@@ -11,5 +11,3 @@ export const errorCatch = (error: any): string => {
 			: message
 		: error.message
 }
-
-console.log(FormDataEvent)

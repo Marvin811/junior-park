@@ -4,4 +4,5 @@ export interface IUser {
 	name: string
 	avatarPath: string
 	phone: string
+	isAdmin: boolean
 }
