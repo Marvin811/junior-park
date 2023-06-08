@@ -26,7 +26,7 @@ const AuthProvider: FC<PropsWithChildren<TypeComponentAuthFields>> = ({
   useEffect(() => {
     const refreshToken = getRefreshToken()
     if (!refreshToken && user) logout()
-  }, [pathname])
+  }, [logout, pathname, user])
 
   return isOnlyUser ? (
     <DynamicCheckRole Component={{ isOnlyUser }}>{children}</DynamicCheckRole>

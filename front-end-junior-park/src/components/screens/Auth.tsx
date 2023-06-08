@@ -1,7 +1,8 @@
-import { FC } from "react"
+import Meta from "../ui/Meta";
+import { FC } from "react";
 
 const Auth: FC = () => {
-    return <div>Auth</div>
-}
+  return <Meta title="Auth">Auth</Meta>;
+};
 
-export default Auth
+export default Auth;
