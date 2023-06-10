@@ -7,7 +7,9 @@ const colors = {
   primary: "#DB4E66",
   secondary: "#F2B236",
   black: '#222528',
-  white: '#FFFFFF'
+  white: '#FFFFFF',
+  gray: '#CED0D2',
+  red: '#FF0000',
 };
 
 module.exports = {
