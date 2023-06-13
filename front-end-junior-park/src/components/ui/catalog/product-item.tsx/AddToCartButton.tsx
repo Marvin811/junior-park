@@ -26,3 +26,5 @@ const AddToCartButton: FC<{ product: IProduct }> = ({ product }) => {
     </div>
   );
 };
+
+export default AddToCartButton;

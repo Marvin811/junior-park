@@ -1,7 +1,7 @@
-import { IProduct } from '@/app/types/product.types'
-
+import { IProduct } from '@/types/product.types'
 import { PRODUCT, TypeProductData, TypeProductDataFilters } from './product.types'
-import { instance } from '@/app/api/api.interceptor'
+import { instance } from '@/api/api.interceptor'
+
 
 export const ProductService = {
 	async getAll(queryData = {} as TypeProductDataFilters) {
@@ -25,7 +25,7 @@ export const ProductService = {
 		})
 	},
 
-    async getByCategory(categorySlug: string) {
+    async getByCategoryId(categorySlug: string) {
 		return instance<IProduct[]>({
 			url: `${PRODUCT}/by-category/${categorySlug}`,
 			method: 'GET',
