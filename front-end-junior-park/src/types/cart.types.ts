@@ -1,6 +1,6 @@
 import { IProduct } from "./product.types"
 
-export interface ICarItem {
+export interface ICartItem {
     id: number
     product: IProduct
     quantity: number
