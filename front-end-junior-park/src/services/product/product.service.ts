@@ -1,11 +1,11 @@
-import { IProduct } from '@/types/product.types'
+import { IProduct, TypePaginationProducts } from '@/types/product.types'
 import { PRODUCT, TypeProductData, TypeProductDataFilters } from './product.types'
 import { instance } from '@/api/api.interceptor'
 
 
 export const ProductService = {
 	async getAll(queryData = {} as TypeProductDataFilters) {
-		return instance<IProduct[]>({
+		return instance<TypePaginationProducts[]>({
 			url: `${PRODUCT}`,
 			method: 'GET',
 			params: queryData

@@ -11,6 +11,7 @@ export const productObject: Prisma.ProductSelect = {
 	price: true,
 	createdAt: true,
 	slug: true,
+	category: {select: categoryObject}
 }
 
 export const productObjectFullest: Prisma.ProductSelect = {
@@ -18,5 +19,5 @@ export const productObjectFullest: Prisma.ProductSelect = {
 	reviews: {
 		select: reviewObject
 	},
-	category: {select: categoryObject}
+	
 }
