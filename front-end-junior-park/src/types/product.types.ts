@@ -8,7 +8,7 @@ export interface IProduct {
     description: string
     price: number
     reviews: IReview[]
-    images: string
+    images: string[]
     createAt: string
     category: ICategory
 }

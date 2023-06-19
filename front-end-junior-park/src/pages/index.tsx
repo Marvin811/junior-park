@@ -17,6 +17,9 @@ export const getStaticProps: GetStaticProps<
     page: 1,
     perPage: 5,
   });
+
+  console.log(data)
+  
   return {
     props: data,
   };

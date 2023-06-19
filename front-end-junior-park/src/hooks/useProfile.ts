@@ -11,5 +11,5 @@ export const useProfile = () => {
       console.log(errorCatch(error))
     }
   });
-  return { profile: data || ({} as IFullUser) };
+  return { profile: data};
 };

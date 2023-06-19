@@ -9,7 +9,7 @@ const AddToCartButton: FC<{ product: IProduct }> = ({ product }) => {
   const { items } = useCart();
 
   const currentElement = items.find(
-    (cartItem) => cartItem.product.id === product.id
+    (cartItem: { product: { id: number; }; }) => cartItem.product.id === product.id
   );
 
   return (
