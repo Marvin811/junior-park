@@ -6,10 +6,10 @@ import { RiShoppingCartFill, RiShoppingCartLine } from "react-icons/ri";
 
 const AddToCartButton: FC<{ product: IProduct }> = ({ product }) => {
   const { addToCart, removeFromCart } = useActions();
-  const { items } = useCart();
+const {items} = useCart()
 
   const currentElement = items.find(
-    (cartItem: { product: { id: number; }; }) => cartItem.product.id === product.id
+    cartItem => cartItem.product.id === product.id
   );
 
   return (
