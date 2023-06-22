@@ -57,6 +57,7 @@ const createProducts = async (quantity: number) => {
     }
 
 
+    // eslint-disable-next-line no-console
     console.log(`Created ${products.length} products`)
 
 }
@@ -65,12 +66,14 @@ const createProducts = async (quantity: number) => {
 
 
 async function main() {
+    // eslint-disable-next-line no-console
     console.log('Start seeding...')
 
     await createProducts(25)
 }
 
 main()
+    // eslint-disable-next-line no-console
     .catch(e => console.error(e))
     .finally(async () => {
         await prisma.$disconnect

@@ -49,7 +49,7 @@ export class AuthService {
 		const user = await this.prisma.user.create({
 			data: {
 				email: dto.email,
-				name: faker.person.firstName(),
+				name: faker.per.firstName(),
 				avatarPath: faker.image.avatar(),
 				phone: faker.phone.number('+7 (###) ###-##-##'),
 				password: await hash(dto.password)
