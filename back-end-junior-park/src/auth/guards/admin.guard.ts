@@ -1,8 +1,8 @@
 import { Injectable, CanActivate, ExecutionContext, ForbiddenException } from '@nestjs/common';
-import { Observable } from 'rxjs';
+import { User } from '@prisma/client';
 
 @Injectable()
-export class AuthGuard implements CanActivate {
+export class OnlyAdminGuard implements CanActivate {
   canActivate(
     context: ExecutionContext,
   ): boolean {
