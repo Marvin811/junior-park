@@ -6,9 +6,6 @@ export class OrderService {
 constructor(private prisma: PrismaService) {}
     async getAll() {
         return this.prisma.order.findMany({
-            where: {
-                userId
-            },
             orderBy: {
                 createdAt: 'desc'
             }
