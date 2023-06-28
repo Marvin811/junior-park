@@ -8,7 +8,7 @@ export enum EnumProductSort {
     OLDEST = 'oldest'
 }
 
-export class GettAllProductDto extends PaginationDto {
+export class GetAllProductDto extends PaginationDto {
     @IsOptional()
     @IsEnum(EnumProductSort)
     sort?: EnumProductSort
@@ -16,4 +16,22 @@ export class GettAllProductDto extends PaginationDto {
     @IsOptional()
     @IsString()
     searchTerm?: string
+
+    @IsOptional()
+    @IsString()
+    ratings?: string
+
+    @IsOptional()
+    @IsString()
+    minPrice?: string
+
+    @IsOptional()
+    @IsString()
+    maxPrice?:string
+
+    @IsOptional()
+    @IsString()
+    categoryId?: string
+
+
 }
