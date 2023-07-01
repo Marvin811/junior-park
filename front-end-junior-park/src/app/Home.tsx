@@ -7,9 +7,9 @@ import { FC } from "react";
 import RootLayout from "./layout";
 
 const Home: FC<TypePaginationProducts> = ({products, length}) => {
-    return(<RootLayout><Heading>Gavno!!!</Heading>
+    return <RootLayout><Heading>Gavno!!!</Heading>
     <Catalog data={products, length}/>
-)</RootLayout>  
+</RootLayout>  
           
 }
 
