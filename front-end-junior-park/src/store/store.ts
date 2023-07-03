@@ -1,43 +1,47 @@
+import { userSlice } from "./user/user.slice";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import {
-	combineReducers,
-	configureStore,
-} from '@reduxjs/toolkit'
-import {
-	FLUSH,
-	PAUSE,
-	PERSIST,
-	PURGE,
-	REGISTER,
-	REHYDRATE,
-	persistReducer,
-	persistStore
-} from 'redux-persist'
-import storage from 'redux-persist/lib/storage'
-import { userSlice } from './user/user.slice'
-//import { cartSlice } from '@/cart/cart.slice'
+  FLUSH,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+  REHYDRATE,
+  persistStore,
+} from "redux-persist";
 
-const persistConfig = {
-	key: 'junior-park',
-	storage: storage,
-	whitelist: ['cart']
+//import { cartSlice } from '@/cart/cart.slice'
+const isClient = typeof window !== "undefined";
+
+const combinedReducers = combineReducers({
+  user: userSlice.reducer,
+});
+
+let mainReducer = combineReducers;
+
+if (isClient) {
+  const { persistReducer } = require("redux-persist");
+  const storage = require("redux-persist/lib/storage").default;
+
+  const persistConfig = {
+    key: "junior-park",
+    storage, 
+    whitelist: ["cart"],
   };
 
-const rootReducer = combineReducers({
-	user: userSlice.reducer
-})
-
-const persistedReducer = persistReducer(persistConfig, rootReducer);
+  mainReducer = persistReducer(persistConfig, combinedReducers);
+}
 
 export const store = configureStore({
-	reducer: persistedReducer,
-	middleware: (getDefaultMiddleware) =>
-	  getDefaultMiddleware({
-		serializableCheck: {
-		  ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-		},
-	  }),
-  })
+  reducer: mainReducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
+});
 
-export const persistor = persistStore(store)
+export const persistor = persistStore(store);
 
-export type TypeRootState = ReturnType<typeof rootReducer>
+export type TypeRootState = ReturnType<typeof mainReducer>;
